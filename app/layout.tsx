@@ -2,6 +2,7 @@
 
 import { ChakraProvider } from "@chakra-ui/react";
 import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
 
 export const metadata = {
   title: "Create Next App",
@@ -18,6 +19,7 @@ export default function RootLayout({
       <body>
         <ChakraProvider>
           <Navbar />
+          <Hero />
           {children}
         </ChakraProvider>
       </body>

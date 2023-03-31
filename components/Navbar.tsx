@@ -63,7 +63,7 @@ export default function Navbar(): JSX.Element {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-            {<Icon as={RiAppsFill} w={8} h={8} />}
+            {<Icon as={RiAppsFill} w={8} h={8} color={"purple.500"} />}
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
