@@ -11,6 +11,7 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
+  useColorMode,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
@@ -20,11 +21,14 @@ import {
   CloseIcon,
   ChevronDownIcon,
   ChevronRightIcon,
+  MoonIcon,
+  SunIcon,
 } from "@chakra-ui/icons";
 import { RiAppsFill } from "react-icons/ri";
 
 export default function Navbar(): JSX.Element {
   const { isOpen, onToggle } = useDisclosure();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <Box>
@@ -63,7 +67,15 @@ export default function Navbar(): JSX.Element {
             fontFamily={"heading"}
             color={useColorModeValue("gray.800", "white")}
           >
-            {<Icon as={RiAppsFill} w={8} h={8} color={"purple.500"} />}
+            {
+              <Icon
+                as={RiAppsFill}
+                w={8}
+                h={8}
+                color={"purple.500"}
+                _hover={{ cursor: "pointer" }}
+              />
+            }
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -77,6 +89,15 @@ export default function Navbar(): JSX.Element {
           direction={"row"}
           spacing={6}
         >
+          <Button
+            as={"a"}
+            variant={"link"}
+            fontSize={24}
+            _hover={{ cursor: "pointer" }}
+            onClick={toggleColorMode}
+          >
+            {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+          </Button>
           <Button
             as={"a"}
             fontSize={"sm"}
@@ -95,7 +116,7 @@ export default function Navbar(): JSX.Element {
             bg={"purple.400"}
             href={"#"}
             _hover={{
-              bg: "purple.300",
+              bg: "purple.500",
             }}
           >
             Sign Up

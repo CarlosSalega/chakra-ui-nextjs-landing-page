@@ -6,6 +6,7 @@ import {
   Stack,
   Text,
   useBreakpointValue,
+  useColorModeValue,
 } from "@chakra-ui/react";
 
 export default function Hero(): JSX.Element {
@@ -35,12 +36,16 @@ export default function Hero(): JSX.Element {
               Design Projects
             </Text>{" "}
           </Heading>
-          <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
-            The project board is an exclusive resource for contract work. It's
+          <Text
+            fontSize={{ base: "md", lg: "lg" }}
+            color={useColorModeValue("gray.800", "white")}
+          >
+            The project board is an exclusive resource for contract work. It`s
             perfect for freelancers, agencies, and moonlighters.
           </Text>
           <Stack direction={{ base: "column", md: "row" }} spacing={4}>
             <Button
+              px={8}
               rounded={"full"}
               bg={"purple.400"}
               color={"white"}
@@ -50,7 +55,9 @@ export default function Hero(): JSX.Element {
             >
               Create Project
             </Button>
-            <Button rounded={"full"}>How It Works</Button>
+            <Button px={8} rounded={"full"}>
+              How It Works
+            </Button>
           </Stack>
         </Stack>
       </Flex>

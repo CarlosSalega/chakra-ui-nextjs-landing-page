@@ -43,7 +43,7 @@ const Card = ({ heading, description, icon, href }: CardProps) => {
           justify={"center"}
           color={"white"}
           rounded={"full"}
-          bg={useColorModeValue("gray.100", "gray.700")}
+          bg={useColorModeValue("gray.800", "white")}
         >
           {icon}
         </Flex>
@@ -61,7 +61,7 @@ const Card = ({ heading, description, icon, href }: CardProps) => {
   );
 };
 
-export default function gridListWith() {
+export default function GridListWith() {
   return (
     <Box px={4} py={20}>
       <Stack spacing={4} as={Container} maxW={"3xl"} textAlign={"center"}>
@@ -72,7 +72,10 @@ export default function gridListWith() {
         >
           Short heading
         </Heading>
-        <Text color={"gray.600"} fontSize={{ base: "sm", sm: "lg" }}>
+        <Text
+          fontSize={{ base: "sm", sm: "lg" }}
+          color={useColorModeValue("white", "gray.800")}
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
           obcaecati ut cupiditate pariatur, dignissimos, placeat amet officiis.
         </Text>
